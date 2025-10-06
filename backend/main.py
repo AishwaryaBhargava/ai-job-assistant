@@ -38,13 +38,20 @@ async def global_exception_handler(request: Request, exc: Exception):
 
 # --- CORS Configuration ---
 logger.info("Configuring CORS middleware for frontend access")
+
+origins = [
+    "https://ai-job-assistant-henna.vercel.app",  # ✅ live frontend
+    "http://localhost:5173",  # ✅ local dev frontend
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 logger.info("CORS middleware successfully configured")
 
 
@@ -93,7 +100,7 @@ async def _on_shutdown() -> None:
 @app.get("/")
 def root():
     logger.info("Root endpoint accessed")
-    return {"message": "AI-Job-Assistant Backend is running dYs?"}
+    return {"message": "AI-Job-Assistant Backend is running 🚀"}
 
 
 @app.get("/health")
@@ -106,21 +113,6 @@ def health():
 def version():
     logger.info("Version endpoint hit")
     return {"status": "success", "version": "v1.0.0"}
-
-from fastapi.middleware.cors import CORSMiddleware
-
-origins = [
-    "https://ai-job-assistant-henna.vercel.app",
-    "http://localhost:5173",
-]
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 
 logger.info("✅ FastAPI app initialized successfully and ready to run")
