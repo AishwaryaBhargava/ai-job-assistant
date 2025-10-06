@@ -2,6 +2,7 @@
   import.meta.env.VITE_API_BASE_URL ||
   "https://ai-job-assistant-backend.onrender.com";
 
+console.log("🌐 Using API Base:", API_BASE);
 export default API_BASE;
 
 export async function apiFetch(path, options = {}) {
