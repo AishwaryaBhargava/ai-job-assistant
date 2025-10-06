@@ -4,7 +4,7 @@ import Loader from "../components/Loader";
 import "./ResumeReviewer.css";
 import FeedbackButtons from "../components/FeedbackButtons";
 
-const API_BASE_URL = "http://127.0.0.1:8000";
+import API_BASE from "../services/apiClient"; // ✅ import shared base URL
 
 function formatDate(value) {
   if (!value) return "-";
@@ -196,7 +196,7 @@ export default function ResumeReviewer() {
     setHistoryLoading(true);
     setHistoryError(null);
     try {
-      const response = await fetch(`${API_BASE_URL}/resume-review/history`, {
+      const response = await fetch(`${API_BASE}/resume-review/history`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -297,7 +297,7 @@ export default function ResumeReviewer() {
     try {
       let response;
       if (resumeSource === "text") {
-        response = await fetch(`${API_BASE_URL}/resume-review/review`, {
+        response = await fetch(`${API_BASE}/resume-review/review`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -308,7 +308,7 @@ export default function ResumeReviewer() {
       } else {
         const formData = new FormData();
         formData.append("file", resumeFile);
-        response = await fetch(`${API_BASE_URL}/resume-review/review-file`, {
+        response = await fetch(`${API_BASE}/resume-review/review-file`, {
           method: "POST",
           headers: token ? { Authorization: `Bearer ${token}` } : undefined,
           body: formData,
@@ -379,7 +379,7 @@ export default function ResumeReviewer() {
         formData.append("resume_filename", filePayload.name);
       }
 
-      const response = await fetch(`${API_BASE_URL}/resume-review/save`, {
+      const response = await fetch(`${API_BASE}/resume-review/save`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -415,7 +415,7 @@ export default function ResumeReviewer() {
     if (!confirmDelete) return;
 
     try {
-      const response = await fetch(`${API_BASE_URL}/resume-review/history/${id}`, {
+      const response = await fetch(`${API_BASE}/resume-review/history/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -443,7 +443,7 @@ export default function ResumeReviewer() {
     const downloadToast = toast.loading("Downloading resume...");
     
     try {
-      const response = await fetch(`${API_BASE_URL}/resume-review/history/${item.id}/download`, {
+      const response = await fetch(`${API_BASE}/resume-review/history/${item.id}/download`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

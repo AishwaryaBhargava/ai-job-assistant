@@ -4,7 +4,7 @@ import Loader from "../components/Loader";
 import "./ResumeAnalyzer.css";
 import FeedbackButtons from "../components/FeedbackButtons";
 
-const API_BASE_URL = "http://127.0.0.1:8000";
+import API_BASE from "../services/apiClient"; // ✅ import shared base URL
 
 const DIMENSION_LABELS = {
   skills: "Skills",
@@ -114,7 +114,7 @@ export default function ResumeAnalyzer() {
     }
     setHistoryLoading(true);
     try {
-      const response = await fetch(`${API_BASE_URL}/resume/history`, {
+      const response = await fetch(`${API_BASE}/resume/history`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -199,7 +199,7 @@ export default function ResumeAnalyzer() {
         formData.append("job_description", trimmedJobDesc);
         formData.append("file", resumeFile);
 
-        response = await fetch(`${API_BASE_URL}/resume/analyze-file`, {
+        response = await fetch(`${API_BASE}/resume/analyze-file`, {
           method: "POST",
           headers,
           body: formData,
@@ -210,7 +210,7 @@ export default function ResumeAnalyzer() {
           : { resume_text: resume };
 
         response = await fetch(
-          `${API_BASE_URL}/resume/analyze?job_description=${encodeURIComponent(trimmedJobDesc)}`,
+          `${API_BASE}/resume/analyze?job_description=${encodeURIComponent(trimmedJobDesc)}`,
           {
             method: "POST",
             headers: {
@@ -287,7 +287,7 @@ export default function ResumeAnalyzer() {
         formData.append("file", analysisMeta.resumeFile);
       }
 
-      const response = await fetch(`${API_BASE_URL}/resume/history`, {
+      const response = await fetch(`${API_BASE}/resume/history`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -331,7 +331,7 @@ export default function ResumeAnalyzer() {
     }
 
     try {
-      const response = await fetch(`${API_BASE_URL}/resume/history/${item.id}/download`, {
+      const response = await fetch(`${API_BASE}/resume/history/${item.id}/download`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -370,7 +370,7 @@ export default function ResumeAnalyzer() {
     }
 
     try {
-      const response = await fetch(`${API_BASE_URL}/resume/history/${analysisId}`, {
+      const response = await fetch(`${API_BASE}/resume/history/${analysisId}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,

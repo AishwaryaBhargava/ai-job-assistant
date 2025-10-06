@@ -4,6 +4,7 @@ import { toast } from "react-hot-toast";
 import Loader from "../components/Loader";
 import "react-datepicker/dist/react-datepicker.css";
 import "./Dashboard.css";
+import API_BASE from "../services/apiClient";
 
 export default function Dashboard() {
   const USER_ID = localStorage.getItem("user_id");
@@ -38,7 +39,7 @@ export default function Dashboard() {
       return;
     }
     try {
-      const res = await fetch(`http://127.0.0.1:8000/applications/${USER_ID}`, {
+      const res = await fetch(`${API_BASE}/applications/${USER_ID}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -69,7 +70,7 @@ export default function Dashboard() {
   const saveRow = async (app) => {
     setActionLoading(true);
     try {
-      const res = await fetch(`http://127.0.0.1:8000/applications/${app._id}`, {
+      const res = await fetch(`${API_BASE}/applications/${app._id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -112,7 +113,7 @@ export default function Dashboard() {
       return;
     setActionLoading(true);
     try {
-      const res = await fetch(`http://127.0.0.1:8000/applications/${appId}`, {
+      const res = await fetch(`${API_BASE}/applications/${appId}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -150,7 +151,7 @@ export default function Dashboard() {
           : [],
       };
 
-      const res = await fetch("http://127.0.0.1:8000/applications/", {
+      const res = await fetch(`${API_BASE}/applications/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

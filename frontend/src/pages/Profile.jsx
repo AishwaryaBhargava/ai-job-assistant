@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { toast } from "react-hot-toast";
 import Loader from "../components/Loader";
 import "./Profile.css";
+import API_BASE from "../services/apiClient";
 
 export default function Profile() {
   const [profile, setProfile] = useState({
@@ -64,7 +65,7 @@ export default function Profile() {
       }
 
       try {
-        const res = await fetch("http://127.0.0.1:8000/profile/", {
+        const res = await fetch(`${API_BASE}/profile/`, {
           method: "GET",
           headers: {
             Authorization: `Bearer ${token}`,
@@ -154,7 +155,7 @@ export default function Profile() {
       const parseForm = new FormData();
       parseForm.append("file", resumeFile);
 
-      const parseRes = await fetch("http://127.0.0.1:8000/resume-upload/upload", {
+      const parseRes = await fetch(`${API_BASE}/resume-upload/upload`, {
         method: "POST",
         headers: { Authorization: 'Bearer ' + token },
         body: parseForm,
@@ -172,7 +173,7 @@ export default function Profile() {
       try {
         const storeForm = new FormData();
         storeForm.append("file", resumeFile);
-        const storeRes = await fetch("http://127.0.0.1:8000/profile/upload-resume", {
+        const storeRes = await fetch(`${API_BASE}/profile/upload-resume`, {
           method: "POST",
           headers: { Authorization: 'Bearer ' + token },
           body: storeForm,
@@ -254,7 +255,7 @@ export default function Profile() {
 
     const resumePath = normalizedPath.startsWith("http")
       ? normalizedPath
-      : "http://127.0.0.1:8000" +
+      : `${API_BASE}` +
         (normalizedPath.startsWith("/") ? normalizedPath : "/" + normalizedPath);
 
     try {
@@ -289,7 +290,7 @@ export default function Profile() {
     const token = localStorage.getItem("token");
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/profile/delete-resume", {
+      const res = await fetch(`${API_BASE}/profile/delete-resume`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -352,7 +353,7 @@ export default function Profile() {
 
     setLoading(true);
     try {
-      const res = await fetch("http://127.0.0.1:8000/profile/", {
+      const res = await fetch(`${API_BASE}/profile/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

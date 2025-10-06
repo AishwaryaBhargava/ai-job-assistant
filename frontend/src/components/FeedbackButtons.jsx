@@ -3,7 +3,7 @@ import { useState } from "react";
 import { toast } from "react-hot-toast";
 import "./FeedbackButtons.css";
 
-const API_BASE_URL = "http://127.0.0.1:8000";
+import API_BASE from "../services/apiClient"; // ✅ import shared base URL
 
 export default function FeedbackButtons({ itemText, source }) {
   const [selected, setSelected] = useState(null);
@@ -20,7 +20,7 @@ export default function FeedbackButtons({ itemText, source }) {
     setLoading(true);
 
     try {
-      const response = await fetch(`${API_BASE_URL}/feedback/`, {
+      const response = await fetch(`${API_BASE}/feedback/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
