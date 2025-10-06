@@ -1,0 +1,149 @@
+ai-job-assistant/
+│
+├── backend/
+│   ├── __pycache__/
+│   │
+│   ├── data/
+│   │   └── locations.csv
+│   │
+│   ├── logs/
+│   │   ├── ai_job_assistant.log
+│   │   └── ai_job_assistant.log.2025-10-05
+│   │
+│   ├── models/
+│   │   ├── __pycache__/
+│   │   ├── application.py
+│   │   ├── job.py
+│   │   ├── preferences.py
+│   │   ├── resume.py
+│   │   ├── review.py
+│   │   └── user.py
+│   │
+│   ├── routes/
+│   │   ├── __pycache__/
+│   │   ├── answers.py
+│   │   ├── applications.py
+│   │   ├── auth.py
+│   │   ├── feedback.py
+│   │   ├── jobs.py
+│   │   ├── preferences.py
+│   │   ├── profile.py
+│   │   ├── recommendations.py
+│   │   ├── resume_upload.py
+│   │   ├── resume.py
+│   │   ├── review.py
+│   │   ├── saved_jobs.py
+│   │   └── users.py
+│   │
+│   ├── scripts/
+│   │   ├── __pycache__/
+│   │   └── load_locations.py
+│   │
+│   ├── services/
+│   │   ├── __pycache__/
+│   │   ├── scrapers/
+│   │   │   ├── __pycache__/
+│   │   │   ├── __init__.py
+│   │   │   ├── html_extractor.py
+│   │   │   └── job_scraper.py
+│   │   ├── ai_service.py
+│   │   ├── job_ingest_service.py
+│   │   ├── job_monitor.py
+│   │   ├── location_service.py
+│   │   ├── parser_service.py
+│   │   ├── recommendation_service.py
+│   │   └── resume_fit_service.py
+│   │
+│   ├── uploads/
+│   │   └── resumes/
+│   │       ├── 68dafa5cdc9b750b2f7ad572_Aishwarya Bhargava Resume Data.pdf
+│   │       └── 68dafa5cdc9b750b2f7ad572_Aishwarya Bhargava Resume.pdf
+│   │
+│   ├── utils/
+│   │   ├── __pycache__/
+│   │   └── logger.py
+│   │
+│   ├── venv/
+│   │   ├── Include/
+│   │   ├── Lib/
+│   │   ├── Scripts/
+│   │   └── pyvenv.cfg
+│   │
+│   ├── .env
+│   ├── auth_utils.py
+│   ├── database.py
+│   ├── main.py
+│   └── requirements.txt
+│
+├── frontend/
+│   ├── dist/
+│   │   ├── assets/
+│   │   │   ├── index-DDu2gEbx.js
+│   │   │   └── index-MoY6jyyK.css
+│   │   ├── index.html
+│   │   └── vite.svg
+│   │
+│   ├── node_modules/
+│   │
+│   ├── public/
+│   │   └── vite.svg
+│   │
+│   ├── src/
+│   │   ├── assets/
+│   │   │   └── react.svg
+│   │   │
+│   │   ├── components/
+│   │   │   ├── FeedbackButtons.css
+│   │   │   ├── FeedbackButtons.jsx
+│   │   │   ├── Footer.css
+│   │   │   ├── Footer.jsx
+│   │   │   ├── Loader.css
+│   │   │   ├── Loader.jsx
+│   │   │   ├── Navbar.css
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── ProtectedRoute.jsx
+│   │   │   ├── Toast.css
+│   │   │   └── Toast.jsx
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Dashboard.css
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── Home.css
+│   │   │   ├── Home.jsx
+│   │   │   ├── JobListings.css
+│   │   │   ├── JobListings.jsx
+│   │   │   ├── JobPreferences.css
+│   │   │   ├── JobPreferences.jsx
+│   │   │   ├── Login.css
+│   │   │   ├── Login.jsx
+│   │   │   ├── PageLayout.css
+│   │   │   ├── Profile.css
+│   │   │   ├── Profile.jsx
+│   │   │   ├── Register.css
+│   │   │   ├── Register.jsx
+│   │   │   ├── ResumeAnalyzer.css
+│   │   │   ├── ResumeAnalyzer.jsx
+│   │   │   ├── ResumeReviewer.css
+│   │   │   └── ResumeReviewer.jsx
+│   │   │
+│   │   ├── services/
+│   │   │   ├── apiClient.js
+│   │   │   ├── jobsService.js
+│   │   │   └── preferencesService.js
+│   │   │
+│   │   ├── App.css
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   └── main.jsx
+│   │
+│   ├── .gitignore
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── README.md
+│   └── vite.config.js
+│
+├── AI-Job-Assistant Project Pipeline.txt
+├── Folder Structure.txt
+└── Running environment, backend and frontend.txt

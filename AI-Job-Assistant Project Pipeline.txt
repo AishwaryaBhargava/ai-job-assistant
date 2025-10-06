@@ -1,0 +1,170 @@
+🏗️ AI-Job-Assistant — Updated Project Pipeline
+
+Phase 1 — Foundations (✅ Completed)
+
+* Frontend: React + Vite + plain CSS skeleton
+* Backend: FastAPI skeleton with dummy routes
+* Database: MongoDB Atlas cluster + schema planning
+* AI Setup: Azure DeepSeek R1 (primary), OpenAI (fallback)
+  🎯 Goal: Establish all core components as functional skeletons
+
+---
+
+Phase 2 — Database & Data Models (✅ Completed)
+
+* DB integration: database.py connected to MongoDB
+* Pydantic models: User, Resume, Application
+* CRUD routes:
+  * POST /users (create user)
+  * GET /users/{id} (fetch user)
+  * POST /applications (create application)
+  * GET /applications/{user_id} (list applications)
+    🎯 Goal: Backend ↔ Database fully integrated
+
+---
+
+Phase 3 — Core Backend Features (✅ Completed)
+
+* Resume Analyzer: POST /resume/analyze
+* Answer Generator: POST /answers/generate
+* Applications Tracker: /applications endpoints
+  🎯 Goal: APIs functional with initial (dummy) AI logic
+
+---
+
+Phase 4 — Frontend UI/UX (✅ Completed, Basic)
+
+* Navbar: Profile | Resume Analyzer | Dashboard
+* Profile: Save name, email, experience
+* Resume Analyzer: Input resume + JD → show score
+* Dashboard: Applications table + add new
+  🎯 Goal: Frontend integrated and showing real data
+
+---
+
+Phase 5 — Core AI Integration (✅ Completed)
+
+* AI service: services/ai_service.py
+* Providers: Azure DeepSeek + OpenAI fallback
+* AI logic:
+  * /resume/analyze → AI match score + suggestions
+  * /answers/generate → tailored job-fit answers
+    🎯 Goal: Deliver real AI-powered results from backend APIs
+
+---
+
+Phase 6 — Expanded Features (✅ Completed)
+
+6A) AuthN/AuthZ
+  * JWT registration/login, bcrypt hashing, protected routes
+  * Frontend login/register; token in localStorage
+
+6B) Resume Uploads & Parsing
+  * Upload .pdf/.docx
+  * Extract with pdfplumber/python-docx/OCR
+  * AI parsing → structured profile; autofill fields
+
+6C) Profile Upgrade
+  * Full resume-style fields (Summary, Skills, Education, Experience, Links)
+  * Editable autofill; persist to DB
+
+6D) Job Tracking 2.0
+  * Schema: job_title, company, url, status, applied_on, next_action, comments, last_updated
+  * Endpoints: POST, PATCH, add comments
+  * UI: clickable URLs, comment threads, inline edits, status badges
+
+6E) Home Page
+  * Landing, features, testimonials carousel, global footer
+
+---
+
+Phase 7 — Profile Page Enhancements (✅ Completed)
+
+* Preserve last uploaded resume (replace/delete)
+* Optional fields: phone, LinkedIn, GitHub, X, portfolio, location, websites
+* Download stored resume from Profile
+
+---
+
+Phase 8 — Resume Analyzer Expansion & AI Enhancements (✅ Completed)
+
+8A) Smarter JD–Resume Alignment
+  * Multi-dimensional scoring: Skills %, Experience %, Education %, Keyword Relevance %
+  * Semantic embeddings (Azure/OpenAI) for context-aware matching
+  * Weighted scoring (critical skills > soft mentions)
+  * UI: score breakdown table
+
+8B) Analyzer 2.0
+  * Narrative Mode → convert resume to editable text
+  * Direct File Analysis vs JD
+  * Persistence: save JD, resume, analyses for logged-in users
+    🎯 Goal: Realistic analysis with storage & better UX
+
+---
+
+Phase 9 — ATS Resume Reviewer & Enhancer (✅ Completed)
+
+* New page: ATS Reviewer (guest → ATS score; logged-in → ATS score + detailed feedback + recommendations + save to table like Analyzer)
+* Deep feedback: detect weak bullets, vague phrasing, gaps
+* Rewrite help: e.g., “Built ML model” → “Developed & deployed XGBoost model improving accuracy by 12%”
+* Keyword gap: highlight missing skills vs similar JDs
+* Quick Wins: top 3 high-impact fixes per target role
+  🎯 Goal: Evolve from basic scoring to a role-aware career coach
+
+---
+
+Phase 10 — Job Recommendations & Postings (✅ Completed)
+
+* Onboarding Q&A (guest or logged-in) to personalize suggestions
+* Real-time jobs page with filters: Title, Location, Date Posted, Salary, Work Type, Employment Type, etc.
+* Inline resume score beside each JD (based on user profile)
+  🎯 Goal: Intelligent, personalized job discovery
+
+---
+
+Phase 11 — Polish & UX (✅ Completed)
+
+* Backend: structured logging + uniform error handling
+* Frontend: loading spinners, toasts, empty states, light/dark mode, 👍/👎 feedback on AI, editable AI answers before save
+
+---
+
+Phase 12 — Deployment (🚧 Final Step)
+
+* Backend: Render/Railway (FastAPI)
+* Frontend: Vercel/Netlify
+* Database: MongoDB Atlas
+* Env vars:
+  * MONGO_URI
+  * JWT_SECRET
+  * AZURE_OPENAI_API_KEY
+  * AZURE_OPENAI_ENDPOINT
+  * AZURE_OPENAI_EMBEDDING_DEPLOYMENT *(if using embeddings)*
+    🎯 Goal: Live, production-ready app accessible online
+
+---
+
+Phase 13 — Future Scope
+
+* Forgot Password (reset flow)
+* Email verification at signup
+* Fix Location autocomplete
+* More dynamic Job Preferences & matches from preferences
+* User roles: admin, applicant, recruiter
+  * Map current users → applicant
+  * Define admin/recruiter routes, pages, permissions
+* Capture free-text user feedback and fine-tune task-specific prompts/models
+* Code hygiene: prune unused files/paths
+
+---
+
+✨ End State
+
+* Secure authentication + verification
+* Resume upload, parsing, and narrative analysis
+* AI-powered Resume Analyzer with persistent history
+* Job tracking with status, comments, and AI scoring
+* Personalized job recommendations with live postings
+* AI-generated, editable answers for applications
+* Polished, responsive UI (light/dark) with robust error handling
+* Fully deployed, production-ready platform

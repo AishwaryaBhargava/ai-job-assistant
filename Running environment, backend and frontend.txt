@@ -1,0 +1,18 @@
+🖥️ Step 1: Activate Python Environment (Backend)
+From your project root (D:\Projects\AI-Job-Assistant):
+	cd backend
+	.\venv\Scripts\activate
+👉 You should see (venv) in your terminal.
+
+🚀 Step 2: Run Backend (FastAPI)
+Once inside backend with (venv) active:
+	uvicorn main:app --reload
+👉 Backend runs at: http://127.0.0.1:8000
+👉 Docs available at: http://127.0.0.1:8000/docs
+
+🌐 Step 3: Run Frontend (React + Vite)
+Open a new terminal (don’t close backend). From root:
+	cd frontend
+	npm run dev
+👉 Frontend runs at: http://localhost:5173
+

@@ -1,0 +1,161 @@
+/* ---------- Root Container ---------- */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card {
+  padding: 2em;
+}
+
+/* ---------- Global Page Layout ---------- */
+body {
+  font-family: "Oxanium", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #f5f5f5;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth scroll & subtle transitions */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------- Shared Container ---------- */
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------- Headings ---------- */
+h1, h2, h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* ---------- Buttons ---------- */
+button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* ---------- Inputs ---------- */
+input, textarea, select {
+  width: 100%;
+  padding: 0.7rem;
+  margin: 0.5rem 0;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #2a2a2a;
+  color: white;
+  font-size: 1rem;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* ---------- Tables ---------- */
+.table {
+  width: 100%;
+  margin-top: 1rem;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  border: 1px solid #444;
+  padding: 0.8rem;
+  text-align: center;
+}
+
+.table th {
+  background-color: #222;
+}
+
+/* ---------- Status Badges ---------- */
+.badge {
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.badge.submitted { background: #007bff; }
+.badge.interview { background: #ffc107; color: #000; }
+.badge.offer { background: #28a745; }
+.badge.rejected { background: #dc3545; }
+
+/* ---------- Match Score Indicator ---------- */
+.score {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.score.good { color: #28a745; }
+.score.medium { color: #ffc107; }
+.score.bad { color: #dc3545; }
+
+/* ---------- Page Shell ---------- */
+#app-shell main {
+  min-height: calc(100vh - 140px);
+  display: block;
+  width: 100%;
+}
+
+/* =======================================
+   🌟 Global Empty State Styles
+   ======================================= */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  font-size: 1.05rem;
+  color: var(--text-secondary, #b0b2c1);
+  background: var(--empty-bg, rgba(255, 255, 255, 0.04));
+  border: 1px dashed var(--empty-border, rgba(255, 255, 255, 0.1));
+  border-radius: 12px;
+  line-height: 1.6;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.light-theme .empty-state {
+  color: #333;
+  background: rgba(240, 240, 240, 0.7);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme .empty-state {
+  color: #b0b2c1;
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.empty-state::before {
+  content: "✨";
+  display: block;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}

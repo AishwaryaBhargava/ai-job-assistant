@@ -1,0 +1,186 @@
+/* ===============================
+   THEME VARIABLES
+   =============================== */
+:root {
+  /* Default = Dark Mode */
+  --bg: #151515;
+  --panel: #121318;
+  --text: #eaf0f5;
+  --muted: #b7c0cc;
+  --accent: #7dd3fc; /* cyan-300-ish */
+  --accent-strong: #22d3ee;
+  --ok: #22c55e;
+  --err: #ef4444;
+  --border: #1f2430;
+  --badge: #1f2937;
+  --badge-text: #c7d2fe;
+}
+
+/* 🌞 Light Mode Variables */
+[data-theme="light"] {
+  --bg: #f4fdf9;            /* pale mint background */
+  --panel: #ffffff;         /* clean white panels */
+  --text: #033d2d;          /* darker, richer green for main text */
+  --muted: #47685a;         /* deeper gray-green for muted text */
+  --accent: #10b981;        /* mint green accent */
+  --accent-strong: #047857; /* darker accent for hover/CTA */
+  --ok: #22c55e;
+  --err: #dc2626;
+  --border: #b7e6c9;        /* subtle border contrast */
+  --badge: #d1fae5;
+  --badge-text: #065f46;
+}
+
+/* ===============================
+   BASE STYLES
+   =============================== */
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ===============================
+   NAVBAR
+   =============================== */
+.navbar {
+  position: sticky; 
+  top: 0;
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(10,10,12,0.85);
+  backdrop-filter: blur(6px);
+}
+[data-theme="light"] .navbar {
+  background: rgba(255,255,255,0.85);
+}
+
+.brand { font-weight: 800; letter-spacing: .3px; }
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 16px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav-links a:hover { 
+  color: var(--accent-strong); 
+  background: var(--panel); 
+}
+
+.nav-links .active { 
+  color: var(--accent); 
+  border: 1px solid var(--border); 
+}
+
+/* ===============================
+   PAGE LAYOUT
+   =============================== */
+.container { 
+  max-width: 980px; 
+  margin: 28px auto; 
+  padding: 0 16px; 
+}
+
+h1 { font-size: 28px; margin: 12px 0 16px; }
+h3 { margin-top: 0; }
+
+/* ===============================
+   FORMS
+   =============================== */
+label { 
+  display: block; 
+  margin: 12px 0 6px; 
+  color: var(--muted); 
+}
+
+input, textarea, select {
+  width: 100%; 
+  padding: 10px 12px; 
+  border-radius: 10px;
+  border: 1px solid var(--border); 
+  background: var(--panel); 
+  color: var(--text);
+  transition: background 0.3s, color 0.3s, border 0.3s;
+}
+
+textarea { resize: vertical; }
+
+.btn {
+  margin-top: 14px; 
+  padding: 10px 14px; 
+  border: none; 
+  border-radius: 10px;
+  color: #001018; 
+  background: var(--accent);
+  cursor: pointer; 
+  font-weight: 700;
+  transition: background 0.2s, color 0.2s;
+}
+.btn:hover { background: var(--accent-strong); }
+
+/* ===============================
+   CARDS / TABLES
+   =============================== */
+.card {
+  background: var(--panel); 
+  border: 1px solid var(--border); 
+  border-radius: 14px;
+  padding: 16px; 
+  margin-top: 18px;
+  transition: background 0.3s, border 0.3s;
+}
+
+.grid {
+  display: grid; 
+  grid-template-columns: repeat(2, minmax(0, 1fr)); 
+  gap: 12px;
+}
+@media (max-width: 700px) { 
+  .grid { grid-template-columns: 1fr; } 
+}
+
+.table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  margin-top: 16px; 
+}
+.table th, .table td { 
+  padding: 10px 12px; 
+  border-bottom: 1px solid var(--border); 
+  text-align: left; 
+}
+.table th { 
+  color: var(--muted); 
+  font-weight: 600; 
+}
+
+/* ===============================
+   MESSAGES & BADGES
+   =============================== */
+.msg { margin-top: 10px; }
+.msg.ok { color: var(--ok); }
+.msg.err { color: var(--err); }
+
+.badge {
+  padding: 4px 8px; 
+  border-radius: 999px; 
+  background: var(--badge);
+  color: var(--badge-text); 
+  font-size: 12px;
+}
+.badge.submitted { background: #1e293b; color: #93c5fd; }
+.badge.interview { background: #1f2937; color: #fbbf24; }
+.badge.offer { background: #064e3b; color: #86efac; }
+.badge.rejected { background: #3f1d1d; color: #fecaca; }

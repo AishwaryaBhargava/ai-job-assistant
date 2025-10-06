@@ -1,0 +1,376 @@
+﻿/* =====================================
+   JOB PREFERENCES PAGE
+   Light + Dark Mode Ready
+   ===================================== */
+
+.preferences-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 2rem;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ------------------------------
+   Header Section
+------------------------------ */
+.page-header {
+  text-align: center;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: background 0.3s ease, border 0.3s ease;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.section-label {
+  display: inline-block;
+  background: var(--accent-light);
+  color: var(--accent-dark);
+  font-weight: 600;
+  padding: 0.35rem 0.9rem;
+  border-radius: 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.page-header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.header-description {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ------------------------------
+   Wizard Section
+------------------------------ */
+.wizard-shell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  width: 100%;
+}
+
+.wizard-progress {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  max-width: 1050px;
+  width: 100%;
+  padding: 0.75rem 0;
+}
+
+.wizard-step {
+  flex: 1;
+  min-width: 130px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.wizard-step:hover {
+  transform: translateY(-2px);
+}
+
+.step-number {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.step-title {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 0.25rem;
+}
+
+.wizard-step.active {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.wizard-step.done {
+  border-color: var(--ok);
+  background: color-mix(in srgb, var(--ok) 10%, transparent);
+}
+
+/* ------------------------------
+   Card & Body
+------------------------------ */
+.card-panel {
+  background: var(--panel);
+  border-radius: 14px;
+  padding: 1.8rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.wizard-body {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.step-hint {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+/* ------------------------------
+   Form & Input Elements
+------------------------------ */
+.preference-group {
+  display: grid;
+  gap: 1rem;
+  border: none;
+}
+
+.preference-legend {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.inline-note {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.input-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.text-input,
+.select-input {
+  flex: 1;
+  padding: 0.65rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  font-size: 0.95rem;
+  transition: border 0.2s ease, background 0.3s ease;
+}
+
+.text-input:focus,
+.select-input:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+/* ------------------------------
+   Pill Buttons
+------------------------------ */
+.pill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.pill {
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  font-size: 0.9rem;
+  background: var(--panel);
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+.pill:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.pill.selected {
+  background: var(--accent);
+  color: #001018;
+  font-weight: 600;
+  box-shadow: 0 0 10px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+/* ------------------------------
+   Buttons
+------------------------------ */
+.wizard-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1050px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.primary-btn,
+.secondary-btn,
+.ghost-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.primary-btn {
+  background: var(--accent);
+  color: #001018;
+}
+
+.primary-btn:hover {
+  background: var(--accent-strong);
+  transform: scale(1.04);
+}
+
+.secondary-btn {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.secondary-btn:hover {
+  border-color: var(--accent);
+}
+
+.ghost-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.ghost-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ------------------------------
+   Quick Stats / Badges
+------------------------------ */
+.quick-stat {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badge-chip {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.35rem 0.75rem;
+  color: var(--text);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* ------------------------------
+   Summary Section
+------------------------------ */
+.summary-card {
+  background: var(--panel);
+  border-radius: 14px;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  max-width: 1050px;
+  margin: 1.5rem auto;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.summary-section {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+.summary-title {
+  margin: 0 0 0.4rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent-dark);
+}
+
+.summary-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.summary-item {
+  margin-bottom: 0.25rem;
+}
+
+/* ------------------------------
+   Status Banner
+------------------------------ */
+.status-banner {
+  padding: 0.9rem 1.1rem;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  color: var(--text);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.status-banner.error {
+  background: rgba(220, 53, 69, 0.12);
+  border-color: rgba(220, 53, 69, 0.35);
+  color: #ffccd1;
+}
+
+/* ------------------------------
+   Responsive
+------------------------------ */
+@media (max-width: 768px) {
+  .wizard-progress {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .wizard-step {
+    min-width: 140px;
+  }
+}

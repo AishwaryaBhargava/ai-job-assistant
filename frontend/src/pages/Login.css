@@ -1,0 +1,140 @@
+/* =====================================
+   LOGIN PAGE — LIGHT + DARK MODE READY
+   ===================================== */
+
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  min-height: 80vh;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ------------------------------
+   Welcome Section
+------------------------------ */
+.login-welcome {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-welcome h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+  color: var(--text);
+}
+
+.login-welcome p {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+/* ------------------------------
+   Login Card
+------------------------------ */
+.login-container {
+  width: 100%;
+  max-width: 420px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  transition: background 0.3s ease, border 0.3s ease;
+  text-align: center;
+}
+
+.login-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 1.2rem;
+}
+
+/* ------------------------------
+   Form Styling
+------------------------------ */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-form input {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  font-size: 0.95rem;
+  transition: border 0.3s ease, background 0.3s ease;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.login-form input::placeholder {
+  color: var(--muted);
+}
+
+/* ------------------------------
+   Login Button
+------------------------------ */
+.login-btn {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background: var(--accent);
+  border: none;
+  border-radius: 10px;
+  color: #001018;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.login-btn:hover {
+  background: var(--accent-strong);
+  transform: scale(1.04);
+}
+
+/* ------------------------------
+   Extra Links (optional)
+------------------------------ */
+.login-footer {
+  margin-top: 1.2rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.login-footer a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.login-footer a:hover {
+  color: var(--accent-strong);
+}
+
+/* ------------------------------
+   Responsive
+------------------------------ */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 1.5rem;
+  }
+
+  .login-welcome h1 {
+    font-size: 1.8rem;
+  }
+}

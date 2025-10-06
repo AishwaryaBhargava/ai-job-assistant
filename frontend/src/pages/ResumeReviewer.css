@@ -1,0 +1,384 @@
+/* ========================================
+   Resume Reviewer — Dark & Light Theme Ready
+   ======================================== */
+
+/* ---------- Global Layout ---------- */
+.resume-reviewer-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text);
+  background-color: var(--bg);
+  padding: 2rem 1rem 5rem;
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ---------- Header Section ---------- */
+.reviewer-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.reviewer-header h1 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.reviewer-header p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ---------- Central Card Container ---------- */
+.reviewer-layout {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+}
+
+.reviewer-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  transition: background 0.3s ease, border 0.3s ease;
+}
+
+/* ---------- Input Section ---------- */
+.reviewer-input-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* ---------- Section Title ---------- */
+.reviewer-input-card::before {
+  content: "Provide Your Resume";
+  display: block;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+/* ---------- Toggle Buttons (Paste/Upload) ---------- */
+.reviewer-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.reviewer-toggle button {
+  flex: 1;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-weight: 600;
+  padding: 0.8rem 1.2rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.reviewer-toggle button.active {
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
+  border-color: var(--accent);
+  color: #001018;
+  box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.reviewer-toggle button:hover:not(.active) {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+/* ---------- Textarea and File Input ---------- */
+.reviewer-textarea,
+.reviewer-file-panel input[type="file"] {
+  width: 100%;
+  border-radius: 10px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 1rem;
+  padding: 1rem;
+  min-height: 160px;
+  resize: vertical;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.reviewer-textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.reviewer-file-panel input[type="file"] {
+  border-style: dashed;
+  text-align: center;
+  color: var(--muted);
+}
+
+.reviewer-file-info {
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--panel);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: var(--text);
+}
+
+.reviewer-file-info button {
+  background: transparent;
+  border: none;
+  color: var(--err);
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.reviewer-file-info button:hover {
+  color: color-mix(in srgb, var(--err) 60%, white);
+}
+
+/* ---------- Action Buttons ---------- */
+.reviewer-primary,
+.reviewer-secondary {
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 1rem;
+}
+
+.reviewer-primary {
+  background: var(--accent);
+  color: #001018;
+}
+
+.reviewer-primary:hover:not(:disabled) {
+  background: var(--accent-strong);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+.reviewer-secondary {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--text);
+}
+
+.reviewer-secondary:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+.reviewer-primary:disabled,
+.reviewer-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---------- Status / Messages ---------- */
+.reviewer-status {
+  color: var(--accent);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.reviewer-error {
+  color: var(--err);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.reviewer-success {
+  color: var(--ok);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.reviewer-hint {
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ---------- Output Card ---------- */
+.reviewer-result-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 900px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  margin: 0 auto;
+  transition: background 0.3s ease, border 0.3s ease;
+}
+
+.reviewer-result-header h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.reviewer-result-header p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.reviewer-placeholder {
+  background: var(--bg);
+  border: 1px dashed var(--border);
+  color: var(--muted);
+  border-radius: 10px;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+/* ---------- Score Card ---------- */
+.reviewer-score-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.reviewer-score-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #facc15;
+}
+
+.reviewer-score-label {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ---------- History Table ---------- */
+.reviewer-history {
+  margin-top: 2rem;
+  width: 90%;
+  max-width: 900px;
+}
+
+.reviewer-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--panel);
+}
+
+.reviewer-table th,
+.reviewer-table td {
+  padding: 0.85rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.reviewer-table th {
+  background: color-mix(in srgb, var(--panel) 85%, var(--accent) 5%);
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ---------- Modal ---------- */
+.reviewer-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1.5rem;
+}
+
+.reviewer-modal {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  max-width: 700px;
+  width: 100%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+.reviewer-close {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.reviewer-close:hover {
+  border-color: var(--accent);
+}
+
+/* ---------- Option Text ---------- */
+.option-helper {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.option-label {
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ---------- Light Theme Specific ---------- */
+body.light-theme .option-helper,
+body.light-theme .option-label {
+  color: #004e35 !important;
+}
+
+.reviewer-global-feedback {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-top: 1px solid #333;
+}
+
+.reviewer-global-feedback p {
+  margin-bottom: 0.5rem;
+  color: #bbb;
+  font-size: 0.95rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .reviewer-card,
+  .reviewer-result-card {
+    padding: 1.5rem;
+  }
+
+  .reviewer-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .reviewer-toggle {
+    flex-direction: column;
+  }
+
+  .reviewer-toggle button {
+    width: 100%;
+  }
+}

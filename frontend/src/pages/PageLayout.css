@@ -1,0 +1,221 @@
+﻿/* =====================================
+   PAGE LAYOUT — LIGHT + DARK MODE READY
+   ===================================== */
+
+.page-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 3rem;
+  color: var(--text);
+  background: var(--bg);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ------------------------------
+   Page Header
+------------------------------ */
+.page-header {
+  text-align: left;
+  margin-bottom: 2.5rem;
+}
+
+.page-header h1 {
+  font-size: 2.4rem;
+  margin: 0 0 0.5rem;
+  color: var(--text);
+}
+
+.page-header p {
+  color: var(--muted);
+  margin: 0;
+  max-width: 720px;
+}
+
+.section-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* ------------------------------
+   Card Panels
+------------------------------ */
+.card-panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  transition: background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-panel + .card-panel {
+  margin-top: 1.5rem;
+}
+
+/* ------------------------------
+   Inline Notes
+------------------------------ */
+.inline-note {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* ------------------------------
+   Pill Buttons / Tags
+------------------------------ */
+.pill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.pill {
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.pill:hover {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, var(--panel));
+  color: var(--text);
+}
+
+.pill.selected {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #001018;
+  box-shadow: 0 6px 15px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+/* ------------------------------
+   Page Actions (Buttons Row)
+------------------------------ */
+.page-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ------------------------------
+   Buttons
+------------------------------ */
+.primary-btn,
+.secondary-btn,
+.ghost-btn {
+  padding: 0.65rem 1.1rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.primary-btn {
+  background: var(--accent);
+  color: #001018;
+  box-shadow: 0 12px 22px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.primary-btn:hover {
+  background: var(--accent-strong);
+  transform: scale(1.03);
+}
+
+.primary-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.secondary-btn {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.secondary-btn:hover {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, var(--panel));
+}
+
+.ghost-btn {
+  background: transparent;
+  border: 1px dashed var(--border);
+  color: var(--muted);
+}
+
+.ghost-btn:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+/* ------------------------------
+   Chips / Badges
+------------------------------ */
+.badge-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: color-mix(in srgb, var(--border) 30%, transparent);
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+/* ------------------------------
+   Empty State
+------------------------------ */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--muted);
+}
+
+.empty-state h3 {
+  margin: 0 0 0.5rem;
+  color: var(--text);
+}
+
+.empty-state p {
+  margin: 0;
+}
+
+/* ------------------------------
+   Responsive
+------------------------------ */
+@media (max-width: 768px) {
+  .page-shell {
+    padding: 2rem 1.2rem 2.5rem;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .page-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primary-btn,
+  .secondary-btn,
+  .ghost-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

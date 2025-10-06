@@ -1,0 +1,33 @@
+/* src/components/Toast.css */
+
+:root {
+  --toast-bg-dark: #1a1a1a;
+  --toast-bg-light: #f9f9f9;
+  --toast-text-dark: #f5f5f5;
+  --toast-text-light: #1a1a1a;
+  --toast-border-dark: #2d2d2d;
+  --toast-border-light: #ddd;
+}
+
+/* Light theme */
+body.light-theme {
+  --toast-bg: var(--toast-bg-light);
+  --toast-text: var(--toast-text-light);
+  --toast-border: var(--toast-border-light);
+}
+
+/* Dark theme */
+body.dark-theme {
+  --toast-bg: var(--toast-bg-dark);
+  --toast-text: var(--toast-text-dark);
+  --toast-border: var(--toast-border-dark);
+}
+
+/* Toast container base styles */
+.react-hot-toast {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  line-height: 1.5;
+}

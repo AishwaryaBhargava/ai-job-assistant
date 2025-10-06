@@ -1,0 +1,35 @@
+.feedback-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.feedback-btn {
+  font-size: 1.4rem;
+  background: transparent;
+  border: 1px solid #444;
+  color: #aaa;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  transition: all 0.2s ease;
+}
+
+.feedback-btn:hover {
+  color: #fff;
+  border-color: #888;
+  transform: scale(1.1);
+}
+
+.feedback-btn.selected {
+  color: #00ff88;
+  border-color: #00ff88;
+  transform: scale(1.15);
+}
+
+.feedback-btn.down.selected {
+  color: #ff5555;
+  border-color: #ff5555;
+}

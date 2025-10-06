@@ -1,0 +1,203 @@
+/* =====================================
+   PROFILE PAGE — LIGHT & DARK MODE READY
+   ===================================== */
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  color: var(--text);
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.profile-container {
+  background: var(--panel);
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+  max-width: 850px;
+  margin: 3rem auto;
+  padding-bottom: 5rem;
+  transition: background 0.3s ease, border 0.3s ease;
+}
+
+.profile-container h2 {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ===========================
+   Card Sections
+   =========================== */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: background 0.3s ease, border 0.3s ease;
+}
+
+.card.small {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+}
+
+.card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+label {
+  display: block;
+  margin: 1rem 0 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* ===========================
+   Form Inputs
+   =========================== */
+input,
+textarea {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.card input[type="file"] {
+  margin-top: 0.8rem;
+  background: var(--panel);
+  color: var(--muted);
+  border: 1px dashed var(--border);
+  padding: 0.5rem;
+}
+
+/* ===========================
+   Links
+   =========================== */
+.card a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.card a:hover {
+  color: var(--accent-strong);
+  text-decoration: underline;
+}
+
+/* ===========================
+   Buttons
+   =========================== */
+.btn {
+  background: var(--accent);
+  color: #001018;
+  padding: 0.6rem 1rem;
+  margin: 0.7rem 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 14px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.btn:hover {
+  background: var(--accent-strong);
+  transform: scale(1.03);
+}
+
+.btn.small {
+  padding: 0.4rem 0.8rem;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+}
+
+/* Danger Variant */
+.btn.danger {
+  background: var(--err);
+  color: white;
+  box-shadow: 0 4px 10px rgba(245, 80, 80, 0.25);
+}
+
+.btn.danger:hover {
+  background: color-mix(in srgb, var(--err) 85%, black);
+}
+
+.btn.small.danger {
+  margin-left: 0.8rem;
+}
+
+/* ✅ Save Profile Button (Distinct) */
+.btn.save-profile {
+  background: var(--ok);
+  color: white;
+  font-weight: bold;
+  padding: 0.8rem 2rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: 3rem auto 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--ok) 25%, transparent);
+}
+
+.btn.save-profile:hover {
+  background: color-mix(in srgb, var(--ok) 90%, black);
+  transform: scale(1.03);
+}
+
+/* Spacing before headings */
+.btn.small + h3 {
+  margin-top: 2rem;
+}
+
+/* ===========================
+   Responsive Adjustments
+   =========================== */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 1.5rem;
+  }
+
+  .profile-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .btn.save-profile {
+    width: 100%;
+  }
+}

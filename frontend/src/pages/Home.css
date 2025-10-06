@@ -1,0 +1,206 @@
+/* =====================================
+   HOME PAGE (LIGHT + DARK MODE READY)
+   ===================================== */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ===========================
+   HERO SECTION
+   =========================== */
+.hero {
+  text-align: center;
+  max-width: 900px;
+  margin-bottom: 3rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.hero-description {
+  margin-top: 1.5rem;
+  text-align: left;
+  max-width: 900px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.hero-description h2 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--accent);
+  transition: color 0.3s ease;
+}
+
+.hero-cta {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.btn-get-started {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: var(--accent);
+  color: #001018;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-get-started:hover {
+  background: var(--accent-strong);
+  transform: scale(1.05);
+}
+
+/* ===========================
+   FEATURES SECTION
+   =========================== */
+.features {
+  width: 100%;
+  max-width: 1100px;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+/* Themed Section Title */
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+/* Explicit theme variations */
+[data-theme="dark"] .section-title {
+  color: var(--accent);
+}
+
+[data-theme="light"] .section-title {
+  color: #047857; /* darker mint-green for light mode */
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.feature-card h3 {
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+[data-theme="light"] .feature-card h3 {
+  color: #047857; /* mint-green for readability */
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ===========================
+   TESTIMONIALS SECTION
+   =========================== */
+.testimonials {
+  width: 100%;
+  max-width: 1100px;
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.testimonial-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  text-align: left;
+  font-size: 0.95rem;
+  color: var(--text);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
+}
+
+.testimonial-card p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  color: var(--muted);
+  transition: color 0.3s ease;
+}
+
+.testimonial-card span {
+  font-weight: bold;
+  color: var(--accent);
+  align-self: flex-end;
+  transition: color 0.3s ease;
+}
+
+/* ===========================
+   SWIPER CUSTOMIZATION
+   =========================== */
+.swiper {
+  padding: 2rem 0;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--accent);
+}
+
+.swiper-pagination-bullet {
+  background: var(--muted);
+  opacity: 0.6;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--accent);
+  opacity: 1;
+}

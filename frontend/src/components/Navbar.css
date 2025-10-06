@@ -1,0 +1,105 @@
+/* ===============================
+   NAVBAR (Theme-Aware)
+   =============================== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.nav__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ---------- BRAND ---------- */
+.nav__brandLink {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  font-size: 1.05rem;
+  transition: color 0.3s ease;
+}
+
+.nav__brandLink:hover {
+  color: var(--accent-strong);
+}
+
+/* ---------- LINKS ---------- */
+.nav__links {
+  list-style: none;
+  display: flex;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav__link:hover {
+  background: var(--border);
+  color: var(--accent);
+}
+
+.nav__link.active {
+  background: var(--accent);
+  color: #001018;
+}
+
+/* ---------- LOGOUT BUTTON ---------- */
+.nav__logout {
+  background: transparent;
+  border: 1px solid var(--err);
+  color: var(--err);
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.nav__logout:hover {
+  background: var(--err);
+  color: #fff;
+}
+
+/* ---------- THEME TOGGLE ---------- */
+.theme-toggle {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+  color: var(--text);
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: rotate(20deg);
+  color: var(--accent-strong);
+}
+
+/* ---------- LIGHT MODE ADJUSTMENTS ---------- */
+[data-theme="light"] .nav__link.active {
+  background: var(--accent);
+  color: white;
+}
+
+[data-theme="light"] .nav__logout:hover {
+  color: white;
+  background: var(--err);
+}
