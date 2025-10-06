@@ -129,7 +129,7 @@ Phase 11 — Polish & UX (✅ Completed)
 
 ---
 
-Phase 12 — Deployment (🚧 Final Step)
+Phase 12 — Deployment (✅ Completed)
 
 * Backend: Render/Railway (FastAPI)
 * Frontend: Vercel/Netlify

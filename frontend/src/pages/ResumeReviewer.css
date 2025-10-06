@@ -305,6 +305,7 @@
   align-items: center;
   z-index: 1000;
   padding: 1.5rem;
+  overflow: auto; 
 }
 
 .reviewer-modal {
@@ -313,10 +314,29 @@
   border-radius: 12px;
   max-width: 700px;
   width: 100%;
-  max-height: 80vh;
+  max-height: 80vh; 
   display: flex;
   flex-direction: column;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+}
+
+.reviewer-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: var(--panel);
+  z-index: 1;
+}
+
+.reviewer-modal-content {
+  padding: 1.5rem;
+  overflow-y: auto; /* ✅ enables scrolling within modal */
+  flex: 1; /* ✅ let it grow and scroll */
 }
 
 .reviewer-close {

@@ -105,18 +105,44 @@
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 1.5rem;
+  table-layout: fixed; /* ✅ Prevents weird column shrinking */
 }
 
 .breakdown-table th,
 .breakdown-table td {
   border: 1px solid var(--border);
-  padding: 0.75rem;
+  padding: 0.9rem 1rem;
   text-align: left;
+  vertical-align: top;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+/* ✅ Define clear column widths */
+.breakdown-table th:nth-child(1),
+.breakdown-table td:nth-child(1) {
+  width: 20%; /* Dimension */
+  min-width: 120px;
+}
+
+.breakdown-table th:nth-child(2),
+.breakdown-table td:nth-child(2) {
+  width: 15%; /* Score */
+  min-width: 80px;
+  text-align: center;
+}
+
+.breakdown-table th:nth-child(3),
+.breakdown-table td:nth-child(3) {
+  width: 65%; /* Highlights */
+  min-width: 300px;
 }
 
 .breakdown-table th {
   background: color-mix(in srgb, var(--panel) 95%, white 5%);
   color: var(--accent);
+  font-weight: 700;
+  text-transform: capitalize;
 }
 
 .breakdown-table tr:nth-child(odd) {
@@ -428,5 +454,158 @@ html[data-theme="light"] .option-card.selected .option-helper {
   }
   .preview-block {
     max-width: 100%;
+  }
+}
+
+/* ===========================
+   Modal Styling
+   =========================== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+  animation: fadeIn 0.25s ease-in;
+}
+
+.modal-card {
+  background: var(--panel);
+  color: var(--text);
+  width: 90%;
+  max-width: 720px;
+  border-radius: 12px;
+  padding: 1.8rem 2rem; /* Increased slightly for balance */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  animation: slideUp 0.25s ease-in;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.6rem;
+}
+
+.modal-header h4 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.modal-close-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 0.3rem 0.75rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.modal-close-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.modal-content {
+  padding-top: 0.5rem;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* === Fixed Analysis Modal Layout === */
+.analysis-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0.5rem 0;
+}
+
+.analysis-modal-content .overall-score {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+}
+
+.analysis-modal-content .breakdown-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.analysis-modal-content .breakdown-table th,
+.analysis-modal-content .breakdown-table td {
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.analysis-modal-content .breakdown-table th {
+  background: color-mix(in srgb, var(--accent) 8%, var(--panel));
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.analysis-modal-content .breakdown-table tr:nth-child(odd) td {
+  background: color-mix(in srgb, var(--panel) 94%, white 6%);
+}
+
+.analysis-modal-content .suggestions-block {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+  background: color-mix(in srgb, var(--panel) 95%, white 5%);
+}
+
+.analysis-modal-content .suggestions-list li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.modal-text-block {
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  overflow-x: auto;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
