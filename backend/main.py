@@ -42,6 +42,7 @@ logger.info("Configuring CORS middleware for frontend access")
 origins = [
     "https://ai-job-assistant-henna.vercel.app",  # ✅ live frontend
     "http://localhost:5173",  # ✅ local dev frontend
+    "https://ai-job-assistant-i7tg.onrender.com",
 ]
 
 app.add_middleware(
